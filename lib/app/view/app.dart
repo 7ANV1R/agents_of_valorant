@@ -9,6 +9,7 @@ import 'package:agents_of_valorant/home/home.dart';
 import 'package:agents_of_valorant/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -16,10 +17,21 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        appBarTheme: const AppBarTheme(color: Color(0xFF13B9FF)),
+        appBarTheme: AppBarTheme(
+          elevation: 0,
+          centerTitle: true,
+          // color: Color(0xFF0e1922),
+          color: Colors.transparent,
+          titleTextStyle: GoogleFonts.roboto(
+            fontWeight: FontWeight.w900,
+            color: Colors.black,
+            fontSize: 22,
+          ),
+        ),
         colorScheme: ColorScheme.fromSwatch(
-          accentColor: const Color(0xFF13B9FF),
+          accentColor: const Color(0xFF0e1922),
         ),
       ),
       localizationsDelegates: const [
