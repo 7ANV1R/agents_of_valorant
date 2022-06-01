@@ -57,41 +57,51 @@ class _HomeViewState extends State<HomeView> {
       body: Stack(
         children: [
           // superhero card
-          Stack(
-            children: [
-              // // Back card
-
-              // if (_auxIndex == agents.length + 1)
-              //   Transform.translate(
-              //     offset: Offset(0, 50 * _auxpercent),
-              //     child: AgentCard(
-              //       agent: agents[_index],
-              //       factorChange: _percent,
-              //     ),
-              //   )
-              // else
-              Transform.translate(
-                offset: Offset(0, 50 * _auxpercent),
-                child: AgentCard(
-                  agent: agents[_auxIndex],
-                  factorChange: _auxpercent,
-                ),
-              ),
-
-              //Front card
-
-              Transform.translate(
-                offset: Offset(-1000 * _percent, 100 * _percent),
-                child: Transform.rotate(
-                  angle: angleRotate * _percent,
-                  child: AgentCard(
-                    agent: agents[_index],
-                    factorChange: _percent,
+          if (_auxIndex == agents.length)
+            Stack(
+              children: [
+                Container(
+                    // color: Colors.white,
+                    ),
+                Transform.translate(
+                  offset: Offset(-1000 * _percent, 100 * _percent),
+                  child: Transform.rotate(
+                    angle: angleRotate * _percent,
+                    child: AgentCard(
+                      agent: agents[_index],
+                      factorChange: _percent,
+                    ),
                   ),
                 ),
-              ),
-            ],
-          ),
+              ],
+            )
+          else
+            Stack(
+              children: [
+                // // Back card
+
+                Transform.translate(
+                  offset: Offset(0, 50 * _auxpercent),
+                  child: AgentCard(
+                    agent: agents[_auxIndex],
+                    factorChange: _auxpercent,
+                  ),
+                ),
+
+                //Front card
+
+                Transform.translate(
+                  offset: Offset(-1000 * _percent, 100 * _percent),
+                  child: Transform.rotate(
+                    angle: angleRotate * _percent,
+                    child: AgentCard(
+                      agent: agents[_index],
+                      factorChange: _percent,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           // void pageview
           PageView.builder(
             controller: _pageController,
