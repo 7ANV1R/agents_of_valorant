@@ -1,4 +1,5 @@
 import 'package:agents_of_valorant/data/model/agent_model.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -36,9 +37,17 @@ class AgentCard extends StatelessWidget {
             right: 20,
             child: Opacity(
               opacity: 1.0 - factorChange!,
-              child: Image.network(
-                agent!.agentImg,
+              child: CachedNetworkImage(
+                imageUrl: agent!.agentImg,
+                placeholder: (context, url) => const Center(
+                  child: FittedBox(
+                    child: CircularProgressIndicator.adaptive(),
+                  ),
+                ),
               ),
+              // child: Image.network(
+              //   agent!.agentImg,
+              // ),
             ),
           ),
           Positioned(
