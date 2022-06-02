@@ -1,5 +1,6 @@
 import 'package:agents_of_valorant/data/model/agent_model.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AgentCard extends StatelessWidget {
   const AgentCard({
@@ -37,6 +38,22 @@ class AgentCard extends StatelessWidget {
               opacity: 1.0 - factorChange!,
               child: Image.network(
                 agent!.agentImg,
+              ),
+            ),
+          ),
+          Positioned(
+            top: size.height * 0.7,
+            // left: 40,
+            right: 100,
+            child: Opacity(
+              opacity: 1.0 - factorChange!,
+              child: Text(
+                agent!.name.toUpperCase(),
+                style: GoogleFonts.roboto(
+                  fontSize: 48,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
               ),
             ),
           ),
