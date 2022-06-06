@@ -7,12 +7,13 @@ import 'package:http/http.dart' as http;
 class AgentRepository {
   Future<List<Agent>?> getAllAgents() async {
     const url = 'https://aov.vercel.app/allagents';
-    final result = await http.Client().get(Uri.parse(url));
-    log('response ${result.body}');
+    final response = await http.Client().get(Uri.parse(url));
+    log('response ${response.body}');
 
-    if (result.statusCode != 200) {
+    if (response.statusCode != 200) {
       return null;
     } else {
+      // log('response $data');
       return Agent.allAgents;
     }
   }
