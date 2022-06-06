@@ -5,7 +5,9 @@ import 'package:agents_of_valorant/home/view/widgets/agent_card.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+  const HomeView({super.key, required this.apiResult});
+
+  final List<Agent> apiResult;
 
   @override
   State<HomeView> createState() => _HomeViewState();
@@ -46,7 +48,7 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
-    final agents = Agent.allAgents;
+    final agents = widget.apiResult;
     const angleRotate = -pi * 0.5;
     return Scaffold(
       appBar: AppBar(

@@ -9,12 +9,14 @@ environment:
 dependencies:
   bloc: ^8.0.3
   cached_network_image: ^3.2.1
+  equatable: ^2.0.3
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
   flutter_localizations:
     sdk: flutter
   google_fonts: ^3.0.1
+  http: ^0.13.4
   intl: ^0.17.0
 
 dev_dependencies:
