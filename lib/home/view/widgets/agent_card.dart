@@ -25,7 +25,8 @@ class AgentCard extends StatelessWidget {
             top: separation,
             child: DecoratedBox(
               decoration: BoxDecoration(
-                color: Color(int.parse(agent!.bgColor)),
+                color: HexColor(agent!.bgColor),
+                // color: Color(int.parse(agent!.bgColor)),
                 borderRadius: BorderRadius.circular(40),
               ),
             ),
@@ -69,5 +70,16 @@ class AgentCard extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class HexColor extends Color {
+  HexColor(final String hexColor) : super(_getColorFromHex(hexColor));
+  static int _getColorFromHex(String hexColor) {
+    
+    if (hexColor.length == 6) {
+      hexColor = 'FF$hexColor';
+    }
+    return int.parse(hexColor, radix: 16);
   }
 }

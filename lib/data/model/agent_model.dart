@@ -62,7 +62,7 @@ class Agent {
       agentBio:
           "Joining from the USA, Brimstone's orbital arsenal ensures his squad always has the advantage. His ability to deliver utility precisely and from a distance make him an unmatched boots-on-the-ground commander.",
       selectionVoice: "They think I'm an old dog? Heh, I'll show 'em just how many tricks I know.",
-      bgColor: '0xFF293462',
+      bgColor: '293462',
       qAbilityName: 'incendiary',
       qAbilityDescription:
           'EQUIP an incendiary grenade launcher. FIRE to launch a grenade that detonates as it comes to a rest on the floor, creating a lingering fire zone that damages players within the zone.',
@@ -87,7 +87,7 @@ class Agent {
       agentBio:
           "Hailing from the U.K., Phoenix's star power shines through in his fighting style, igniting the battlefield with flash and flare. Whether he's got backup or not, he'll rush into a fight on his own terms.",
       selectionVoice: 'Just take a seat, I got this.',
-      bgColor: '0xFFF7D716',
+      bgColor: 'F7D716',
       qAbilityName: 'curveball',
       qAbilityDescription:
           'EQUIP a flare orb that takes a curving path and detonates shortly after throwing. FIRE to curve the flare orb to the left, detonating and blinding any player who sees the orb. ALTERNATE FIRE to curve the flare orb to the right.',
@@ -110,7 +110,7 @@ class Agent {
       agentBio:
           "Hailing from the U.K., Phoenix's star power shines through in his fighting style, igniting the battlefield with flash and flare. Whether he's got backup or not, he'll rush into a fight on his own terms.",
       selectionVoice: 'Just take a seat, I got this.',
-      bgColor: '0xFFF24C4C',
+      bgColor: 'F24C4C',
       qAbilityName: 'curveball',
       qAbilityDescription:
           'EQUIP a flare orb that takes a curving path and detonates shortly after throwing. FIRE to curve the flare orb to the left, detonating and blinding any player who sees the orb. ALTERNATE FIRE to curve the flare orb to the right.',
