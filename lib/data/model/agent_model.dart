@@ -34,6 +34,24 @@ class Agent {
     required this.xAbilityDescription,
   });
 
+  factory Agent.fromJson(Map<String, dynamic> json) => Agent(
+        name: json['name'] as String,
+        agentImg: json['agentImg'] as String,
+        role: json['role'] as String,
+        agentNumber: json['agentNumber'] as int,
+        agentBio: json['agentBio'] as String,
+        selectionVoice: json['selectionVoice'] as String,
+        bgColor: json['bgColor'] as String,
+        qAbilityName: json['qAbilityName'] as String,
+        qAbilityDescription: json['qAbilityDescription'] as String,
+        eAbilityName: json['eAbilityName'] as String,
+        eAbilityDescription: json['eAbilityDescription'] as String,
+        cAbilityName: json['cAbilityName'] as String,
+        cAbilityDescription: json['cAbilityDescription'] as String,
+        xAbilityName: json['xAbilityName'] as String,
+        xAbilityDescription: json['xAbilityDescription'] as String,
+      );
+
   static List<Agent> allAgents = [
     //brim
     Agent(
