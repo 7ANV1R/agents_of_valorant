@@ -1,6 +1,7 @@
 import 'package:agents_of_valorant/data/model/agent_model.dart';
 import 'package:agents_of_valorant/repositories/agent_repository.dart';
 import 'package:bloc/bloc.dart';
+// ignore: depend_on_referenced_packages
 import 'package:meta/meta.dart';
 
 part 'home_state.dart';
