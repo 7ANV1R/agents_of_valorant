@@ -4,6 +4,7 @@ import 'package:agents_of_valorant/widgets/loader_wave.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 class AgentCard extends StatelessWidget {
   const AgentCard({
@@ -28,7 +29,6 @@ class AgentCard extends StatelessWidget {
             child: DecoratedBox(
               decoration: BoxDecoration(
                 color: HexColor(agent!.bgColor),
-                // color: Color(int.parse(agent!.bgColor)),
                 borderRadius: BorderRadius.circular(40),
               ),
             ),
@@ -55,9 +55,24 @@ class AgentCard extends StatelessWidget {
             ),
           ),
           Positioned(
+            top: separation,
+            right: size.width * 0.05,
+            child: Opacity(
+              opacity: 1.0 - factorChange!,
+              child: Text(
+                agent!.agentNumber.toString(),
+                style: GoogleFonts.oswald(
+                  fontSize: 96,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white.withOpacity(0.15),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
             // top: size.height * 0.7,
             bottom: size.height * 0.13,
-            left: 40,
+            left: size.width * 0.07,
             // right: 100,
             child: Opacity(
               opacity: 1.0 - factorChange!,
@@ -76,13 +91,13 @@ class AgentCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 8,
+                  SizedBox(
+                    height: size.height * 0.01,
                   ),
                   Row(
                     children: [
-                      const SizedBox(
-                        width: 32,
+                      SizedBox(
+                        width: size.width * 0.04,
                       ),
                       SizedBox(
                         width: size.width * 0.75,
@@ -98,13 +113,13 @@ class AgentCard extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(
-                    height: 64,
+                  SizedBox(
+                    height: size.height * 0.04,
                   ),
                   Text(
                     agent!.name.toUpperCase(),
                     style: GoogleFonts.roboto(
-                      fontSize: 64,
+                      fontSize: 48,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
@@ -112,12 +127,28 @@ class AgentCard extends StatelessWidget {
                   Text(
                     agent!.role.toCapitalized(),
                     style: GoogleFonts.roboto(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w500,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w400,
                       color: Colors.white,
                     ),
                   ),
                 ],
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: size.height * 0.13,
+            right: size.width * 0.05,
+            child: Opacity(
+              opacity: 1.0 - factorChange!,
+              // child: const Icon(
+              //   Icons.arrow_forward,
+              //   color: Colors.white,
+              // ),
+              child: Lottie.asset(
+                'assets/lottie/right-arrow.json',
+                height: 64,
+                width: 64,
               ),
             ),
           ),
