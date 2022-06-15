@@ -1,4 +1,5 @@
 import 'package:agents_of_valorant/data/model/agent_model.dart';
+import 'package:agents_of_valorant/widgets/loader_wave.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -39,10 +40,11 @@ class AgentCard extends StatelessWidget {
             child: Opacity(
               opacity: 1.0 - factorChange!,
               child: CachedNetworkImage(
+                fadeOutDuration: const Duration(milliseconds: 400),
                 imageUrl: agent!.agentImg,
                 placeholder: (context, url) => const Center(
                   child: FittedBox(
-                    child: CircularProgressIndicator.adaptive(),
+                    child: LoaderWave(),
                   ),
                 ),
               ),
@@ -76,7 +78,6 @@ class AgentCard extends StatelessWidget {
 class HexColor extends Color {
   HexColor(final String hexColor) : super(_getColorFromHex(hexColor));
   static int _getColorFromHex(String hexColor) {
-    
     if (hexColor.length == 6) {
       hexColor = 'FF$hexColor';
     }
