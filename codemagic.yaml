@@ -2,5 +2,5 @@ workflows:
   build-ios-app:
     name: ios app build workflow
     scripts:
-      - name: Build for iOS # Name of the section
-        script: - flutter build ios --debug --no-codesign
+      - name: Build for iOS
+        script: flutter build ios --debug --no-codesign
