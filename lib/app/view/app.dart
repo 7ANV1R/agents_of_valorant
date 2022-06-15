@@ -19,12 +19,12 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           elevation: 0,
           centerTitle: true,
           // color: Color(0xFF0e1922),
           color: Colors.transparent,
-          titleTextStyle: GoogleFonts.roboto(
+          titleTextStyle: TextStyle(
             fontWeight: FontWeight.w900,
             color: Colors.black,
             fontSize: 22,
