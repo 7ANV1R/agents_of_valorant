@@ -3,4 +3,4 @@ workflows:
     name: ios app build workflow
     scripts:
       - name: Build for iOS
-        script: flutter build ios --debug --no-codesign
+        script: flutter build ios --development --no-codesign
