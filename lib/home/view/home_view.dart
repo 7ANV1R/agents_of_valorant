@@ -1,8 +1,12 @@
+// ignore_for_file: avoid_print
+
 import 'dart:math';
 
 import 'package:agents_of_valorant/data/model/agent_model.dart';
 import 'package:agents_of_valorant/home/view/widgets/agent_card.dart';
 import 'package:flutter/material.dart';
+
+import '../../details/details.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key, required this.apiResult});
@@ -90,7 +94,17 @@ class _HomeViewState extends State<HomeView> {
           PageView.builder(
             controller: _pageController,
             itemCount: agents.length,
-            itemBuilder: (index, context) => const SizedBox(),
+            itemBuilder: (context, index) => InkWell(
+                onTap: () {
+                  print('clicked');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AgentDetails(agent: agents[index]),
+                    ),
+                  );
+                },
+                child: const SizedBox()),
           ),
         ],
       ),

@@ -141,10 +141,6 @@ class AgentCard extends StatelessWidget {
             right: size.width * 0.05,
             child: Opacity(
               opacity: 1.0 - factorChange!,
-              // child: const Icon(
-              //   Icons.arrow_forward,
-              //   color: Colors.white,
-              // ),
               child: Lottie.asset(
                 'assets/lottie/right-arrow.json',
                 height: 64,
