@@ -3,10 +3,10 @@
 import 'dart:math';
 
 import 'package:agents_of_valorant/data/model/agent_model.dart';
+import 'package:agents_of_valorant/home/home.dart';
 import 'package:agents_of_valorant/home/view/widgets/agent_card.dart';
 import 'package:flutter/material.dart';
-
-import '../../details/details.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key, required this.apiResult});
@@ -96,13 +96,14 @@ class _HomeViewState extends State<HomeView> {
             itemCount: agents.length,
             itemBuilder: (context, index) => InkWell(
                 onTap: () {
+                  context.read<HomeCubit>().onTapDetails(context, agents[index]);
                   print('clicked');
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => AgentDetails(agent: agents[index]),
-                    ),
-                  );
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) => AgentDetails(agent: agents[index]),
+                  //   ),
+                  // );
                 },
                 child: const SizedBox()),
           ),
