@@ -6,6 +6,7 @@ import 'package:agents_of_valorant/data/model/agent_model.dart';
 import 'package:agents_of_valorant/home/home.dart';
 import 'package:agents_of_valorant/home/view/widgets/agent_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeView extends StatefulWidget {
@@ -56,6 +57,14 @@ class _HomeViewState extends State<HomeView> {
     const angleRotate = -pi * 0.5;
     return Scaffold(
       appBar: AppBar(
+        systemOverlayStyle: const SystemUiOverlayStyle(
+          // Status bar color
+          statusBarColor: Colors.transparent,
+
+          // Status bar brightness (optional)
+          statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
+          statusBarBrightness: Brightness.light, // For iOS (dark icons)
+        ),
         title: const Text(
           'VALORANT AGENTS',
         ),
