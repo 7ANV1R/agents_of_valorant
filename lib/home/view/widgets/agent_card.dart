@@ -26,10 +26,13 @@ class AgentCard extends StatelessWidget {
         children: [
           Positioned.fill(
             top: separation,
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                color: HexColor(agent!.bgColor),
-                borderRadius: BorderRadius.circular(40),
+            child: Hero(
+              tag: agent!.bgColor,
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  color: HexColor(agent!.bgColor),
+                  borderRadius: BorderRadius.circular(40),
+                ),
               ),
             ),
           ),
@@ -40,12 +43,15 @@ class AgentCard extends StatelessWidget {
             right: 20,
             child: Opacity(
               opacity: 1.0 - factorChange!,
-              child: CachedNetworkImage(
-                fadeOutDuration: const Duration(milliseconds: 400),
-                imageUrl: agent!.agentImg,
-                placeholder: (context, url) => const Center(
-                  child: FittedBox(
-                    child: LoaderWave(),
+              child: Hero(
+                tag: agent!.agentImg,
+                child: CachedNetworkImage(
+                  fadeOutDuration: const Duration(milliseconds: 400),
+                  imageUrl: agent!.agentImg,
+                  placeholder: (context, url) => const Center(
+                    child: FittedBox(
+                      child: LoaderWave(),
+                    ),
                   ),
                 ),
               ),
@@ -116,12 +122,18 @@ class AgentCard extends StatelessWidget {
                   SizedBox(
                     height: size.height * 0.04,
                   ),
-                  Text(
-                    agent!.name.toUpperCase(),
-                    style: GoogleFonts.roboto(
-                      fontSize: 48,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                  Hero(
+                    tag: agent!.name,
+                    child: Material(
+                      type: MaterialType.transparency,
+                      child: Text(
+                        agent!.name.toUpperCase(),
+                        style: GoogleFonts.roboto(
+                          fontSize: 48,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
                     ),
                   ),
                   Text(

@@ -97,7 +97,7 @@ class _HomeViewState extends State<HomeView> {
             itemBuilder: (context, index) => InkWell(
                 onTap: () {
                   context.read<HomeCubit>().onTapDetails(context, agents[index]);
-                  print('clicked');
+
                   // Navigator.push(
                   //   context,
                   //   MaterialPageRoute(

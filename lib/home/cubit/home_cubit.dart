@@ -23,6 +23,10 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   Future<void> onTapDetails(BuildContext context, Agent agent) async {
+    // Navigator.push(
+    //   context,
+    //   MaterialPageRoute(builder: (context) => AgentDetails(agent: agent)),
+    // );
     Navigator.push(
       context,
       PageRouteBuilder(
