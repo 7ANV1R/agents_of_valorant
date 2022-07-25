@@ -21,59 +21,234 @@ class AgentDetails extends StatelessWidget {
     return Scaffold(
       body: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.light,
-        child: Stack(
-          children: [
-            // background
-            Hero(
-              tag: agent.bgColor,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: HexColor(agent.bgColor),
+        child: DefaultTextStyle(
+          style: GoogleFonts.roboto(
+            fontSize: 24,
+            fontWeight: FontWeight.normal,
+            color: Colors.white,
+          ),
+          child: Stack(
+            children: [
+              // background
+              Hero(
+                tag: agent.bgColor,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: HexColor(agent.bgColor),
+                  ),
                 ),
               ),
-            ),
 
-            // image
-            Positioned(
-              top: 20,
-              left: 20,
-              child: SafeArea(
-                child: Hero(
-                  tag: agent.agentImg,
-                  child: CachedNetworkImage(
-                    fadeOutDuration: const Duration(milliseconds: 400),
-                    imageUrl: agent.agentImg,
-                    height: size.height * 0.5,
-                    placeholder: (context, url) => const Center(
-                      child: FittedBox(
-                        child: LoaderWave(),
-                      ),
+              //Listview
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: ListView(
+                  children: [
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Hero(
+                          tag: agent.agentImg,
+                          child: CachedNetworkImage(
+                            fadeOutDuration: const Duration(milliseconds: 400),
+                            imageUrl: agent.agentImg,
+                            height: size.height * 0.5,
+                            placeholder: (context, url) => const Center(
+                              child: FittedBox(
+                                child: LoaderWave(),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 8,
+                          right: 50,
+                          child: Hero(
+                            tag: agent.agentNumber,
+                            child: Material(
+                              type: MaterialType.transparency,
+                              child: Text(
+                                agent.agentNumber.toString(),
+                                style: GoogleFonts.oswald(
+                                  fontSize: 168,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white.withOpacity(0.15),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 8,
+                          left: 0,
+                          child: Hero(
+                            tag: agent.name,
+                            child: Material(
+                              type: MaterialType.transparency,
+                              child: Text(
+                                agent.name.toUpperCase(),
+                                style: GoogleFonts.roboto(
+                                  fontSize: 48,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
+
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    //role
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('// role'),
+                        Text(agent.role),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('// role'),
+                        Text(agent.role),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('// role'),
+                        Text(agent.role),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('// role'),
+                        Text(agent.role),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('// role'),
+                        Text(agent.role),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('// role'),
+                        Text(agent.role),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('// role'),
+                        Text(agent.role),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('// role'),
+                        Text(agent.role),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('// role'),
+                        Text(agent.role),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('// role'),
+                        Text(agent.role),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                  ],
                 ),
               ),
-            ),
-            Positioned(
-              top: size.height * 0.35,
-              left: size.width * 0.5,
-              child: SafeArea(
-                child: Hero(
-                  tag: agent.name,
-                  child: Material(
-                    type: MaterialType.transparency,
-                    child: Text(
-                      agent.name.toUpperCase(),
-                      style: GoogleFonts.roboto(
-                        fontSize: 48,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
+
+              // image
+              // Positioned(
+              //   top: 20,
+              //   left: 20,
+              //   child: SafeArea(
+              //     child: Hero(
+              //       tag: agent.agentImg,
+              //       child: CachedNetworkImage(
+              //         fadeOutDuration: const Duration(milliseconds: 400),
+              //         imageUrl: agent.agentImg,
+              //         height: size.height * 0.5,
+              //         placeholder: (context, url) => const Center(
+              //           child: FittedBox(
+              //             child: LoaderWave(),
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              // Positioned(
+              //   top: size.height * 0.35,
+              //   left: size.width * 0.5,
+              //   child: SafeArea(
+              //     child: Hero(
+              //       tag: agent.name,
+              //       child: Material(
+              //         type: MaterialType.transparency,
+              //         child: Text(
+              //           agent.name.toUpperCase(),
+              //           style: GoogleFonts.roboto(
+              //             fontSize: 48,
+              //             fontWeight: FontWeight.bold,
+              //             color: Colors.white,
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
+            ],
+          ),
         ),
       ),
     );

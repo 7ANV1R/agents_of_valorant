@@ -30,6 +30,7 @@ class HomeCubit extends Cubit<HomeState> {
     Navigator.push(
       context,
       PageRouteBuilder(
+        transitionDuration: const Duration(milliseconds: 700),
         pageBuilder: (context, animation, secondaryAnimation) {
           return FadeTransition(
             opacity: animation,

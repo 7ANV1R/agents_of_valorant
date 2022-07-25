@@ -65,12 +65,18 @@ class AgentCard extends StatelessWidget {
             right: size.width * 0.05,
             child: Opacity(
               opacity: 1.0 - factorChange!,
-              child: Text(
-                agent!.agentNumber.toString(),
-                style: GoogleFonts.oswald(
-                  fontSize: 96,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white.withOpacity(0.15),
+              child: Hero(
+                tag: agent!.agentNumber,
+                child: Material(
+                  type: MaterialType.transparency,
+                  child: Text(
+                    agent!.agentNumber.toString(),
+                    style: GoogleFonts.oswald(
+                      fontSize: 96,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white.withOpacity(0.15),
+                    ),
+                  ),
                 ),
               ),
             ),
