@@ -4,6 +4,12 @@ Valorant agents info app.
 
 ---
 
+
+## Progress Screenshot
+![output](https://user-images.githubusercontent.com/35481593/180747923-289b7204-ec2e-4951-b974-b2eeff697c1a.gif)
+
+---
+
 ## Getting Started 🚀
 
 This project contains 3 flavors:
